@@ -1,0 +1,142 @@
+<template>
+	<w-dialog
+		v-model="dialogVisible"
+		:title="title"
+		fullscreen
+		@close="onDialogClose"
+	>
+		<filterBar
+			ref="filterBar"
+			:tableData="tableData"
+			@on-search="getListData"
+		>
+		</filterBar>
+		<fx-details-table
+			ref="listTable"
+			:tableColumn="tableColumn"
+			:tableData="tableData"
+			:showColumnFilterBtn="false"
+			:selectable="false"
+			:selectMulity="false"
+			:showPagination="false"
+			:tableSearchInput="false"
+			:canAdd="false"
+			:fullScreenBtn="false"
+			:showDeleteBtn="false"
+			showIndex
+			:defaultSortParam="defaultSortParam"
+		>
+		</fx-details-table>
+	</w-dialog>
+</template>
+<script>
+import filterBar from './FilterBar.vue'
+export const apiName = 'warn'
+export default {
+	name: 'listContainer',
+	components: {
+		filterBar
+	},
+	data () {
+		return {
+			tableColumn: [
+				{ prop: 'organName', label: '机构', required: true, sortable: true },
+				{ prop: 'houseName', label: '仓库', required: true },
+				{ prop: 'itemTypeName', label: '所属类别', required: true, sortable: true },
+				{ prop: 'itemCode', label: '品项编号', required: true, sortable: true, width: '140px' },
+				{ prop: 'itemName', label: '品项名称', required: true, sortable: true },
+				{ prop: 'spec', label: '品项规格', required: true },
+				{ prop: 'unitName', label: '品项单位', required: true },
+				{ prop: 'batchCode', label: '批次号', required: true, sortable: true, width: '150px' },
+				{ prop: 'amount', label: '剩余库存', required: true },
+				{
+					prop: 'productDate',
+					label: '生产日期',
+					required: true,
+					sortable: true,
+					width: '160px',
+					formatter: (row) => {
+						return this.$fxUtils.formatterDateTime(row.productDate)
+					}
+				},
+				{ prop: 'shelfLife', label: '保质期天数', required: true, sortable: true },
+				{ prop: 'wornDate', label: '预警天数', required: true, sortable: true },
+				{
+					prop: 'wornState',
+					label: '预警状态',
+					required: true,
+					sortable: true,
+					fxRender: this.wornStateRender
+				}
+			],
+			title: '',
+			tableData: [],
+			defaultSortParam: { wornDate: 'asc' },
+			dialogVisible: false
+		}
+	},
+	methods: {
+		open (item) {
+			this.tableData = []
+			this.title = item.label
+			this.dialogVisible = true
+			this.$nextTick(() => {
+				this.refresh()
+			})
+		},
+		refresh () {
+			this.$refs.filterBar.initFilter()
+		},
+		getSearchParams () {
+			const params = {
+				...this.$refs.filterBar.getFilterParams()
+			}
+			return params
+		},
+		getListData () {
+			return this.getListDataHandler().then(res => {
+				this.tableData = res
+				return Promise.resolve(res)
+			})
+		},
+		getListDataHandler () {
+			return this.$fxApi(`${apiName}.getShelfLifeListData`)({ data: this.getSearchParams() })
+		},
+		onDialogClose () {
+			this.$emit('on-refresh')
+		},
+		wornStateClass (row) {
+			switch (row.wornState) {
+			case 0:
+				return 'warn-state'
+			case 1:
+				return 'over-state'
+			default:
+				return ''
+			}
+		},
+		wornStateText (row) {
+			switch (row.wornState) {
+			case 0:
+				return '预警'
+			case 1:
+				return '超期'
+			default:
+				return ''
+			}
+		},
+		wornStateRender (h, { row }) {
+			return <span class={['fx-list-table__cell-span', this.wornStateClass(row)]}>{this.wornStateText(row)}</span>
+		}
+	}
+}
+</script>
+<style lang="stylus" scoped>
+@import '~$assets/stylus/varsty.styl'
+>>>.over-state {
+	color $fxRed6
+}
+>>>.warn-state {
+	color $fxOrange4
+}
+</style>

@@ -1,0 +1,11 @@
+{
+  "name": "wind-microservice",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "examples/*"
+  ],
+  "devDependencies": {
+    "lerna": "^6.3.0"
+  }
+}

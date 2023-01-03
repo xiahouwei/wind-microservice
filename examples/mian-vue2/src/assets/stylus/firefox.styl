@@ -1,0 +1,15 @@
+@import './varsty'
+
+/*自定义滚动条*/
+.fx-custom-scroll {
+	// 火狐浏览器设置滚动条
+	scrollbar-color: #ccc #F5F5F5;
+	scrollbar-width: thin
+}
+
+/* 火狐浏览器隐藏原生checkbox样式 */
+input:disabled, input[disabled] {
+	&.el-checkbox__original {
+		opacity 0
+	}
+}

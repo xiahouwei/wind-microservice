@@ -1,0 +1,19 @@
+/*stylus functions*/
+@import './varsty'
+
+$fontNormal = {
+    name: scm8,
+    value: $fxBlue1
+}
+$fontBig = {
+    name: srm,
+    value: $fxBlue13
+}
+
+$fontSizeMapping = ($fontNormal $fontBig)
+
+$fx-dynamic-theme-type(type)
+    for item in $fontSizeMapping
+        [data-app-theme-type = { item[name] }] & {
+            {type}: item[value]
+        }

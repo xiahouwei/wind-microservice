@@ -1,0 +1,117 @@
+// 菜单设置
+export default [{
+	id: 'home',
+	title: '云供应链平台',
+	icon: 'el-icon-s-platform',
+	path: 'home'
+}, {
+	id: 'basic',
+	title: '基础档案',
+	icon: 'el-icon-s-order',
+	child: [{
+		id: 'basic-organ',
+		title: '机构管理',
+		path: 'organManage'
+	}, {
+		id: 'basic-supplier',
+		title: '供货商管理',
+		path: 'supplierManage'
+	}, {
+		id: 'basic-employee',
+		title: '员工管理',
+		path: 'employeeManage'
+	}, {
+		id: 'basic-customer',
+		title: '客户管理',
+		path: 'customerManage'
+	}, {
+		id: 'basic-item',
+		title: '品项管理',
+		path: 'itemManage'
+	}, {
+		id: 'basic-role',
+		title: '权限管理',
+		path: 'roleManage'
+	}, {
+		id: 'basic-price',
+		title: '价格方案',
+		path: 'pricePlan'
+	}, {
+		id: 'basic-stock',
+		title: '采购方案',
+		path: 'stockPlan'
+	}]
+}, {
+	id: 'support',
+	title: '辅助档案',
+	icon: 'el-icon-tickets',
+	child: [{
+		id: 'support-financial',
+		title: '财务分类',
+		path: 'financialClass'
+	}, {
+		id: 'bussiness-type',
+		title: '业务类型',
+		path: 'bussinessType'
+	}, {
+		id: 'support-take-stock',
+		title: '盘点分类',
+		path: 'takeStockClass'
+	}, {
+		id: 'support-system',
+		title: '系统参数',
+		path: 'systemParams'
+	}]
+}, {
+	id: 'forward',
+	title: '结转管理',
+	icon: 'el-icon-tickets',
+	child: [{
+		id: 'account-period',
+		title: '会计期',
+		path: 'accountPeriod'
+	}]
+}, {
+	id: 'stockSale',
+	title: '采销管理',
+	icon: 'el-icon-tickets',
+	child: [{
+		id: 'stock-order',
+		title: '采购订单',
+		path: 'stockOrder'
+	}, {
+		id: 'sale-order',
+		title: '销售订单',
+		path: 'saleOrder'
+	}]
+}, {
+	id: 'assign',
+	title: '分派管理',
+	icon: 'el-icon-tickets',
+	child: [{
+		id: 'in-store-assign',
+		title: '入库分派',
+		path: 'inStoreAssign'
+	}]
+}, {
+	id: 'store',
+	title: '库存管理',
+	icon: 'el-icon-tickets',
+	child: [{
+		id: 'in-store-order',
+		title: '入库单',
+		path: 'inStoreOrder'
+	}, {
+		id: 'out-store-order',
+		title: '出库单',
+		path: 'outStoreOrder'
+	}, {
+		id: 'move-order',
+		title: '调拨单',
+		path: 'moveOrder'
+	}, {
+		id: 'take-stock-order',
+		title: '盘点单',
+		path: 'takeStockOrder'
+	}]
+}]

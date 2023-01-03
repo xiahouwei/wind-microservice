@@ -1,0 +1,85 @@
+{
+  "name": "s1_web_retail_bms",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "cross-env BABEL_ENV=dev vue-cli-service serve --mode dev --fix",
+    "serve:pre": "vue-cli-service serve --mode pre --fix",
+    "serve:sandbox": "vue-cli-service serve --mode sandbox --fix",
+    "serve:pro": "vue-cli-service serve --mode pro --fix",
+    "build:interval": "cross-env BABEL_ENV=production NODE_ENV=production vue-cli-service build --mode dev --fix && npm run remove:map",
+    "build:pre": "cross-env BABEL_ENV=production NODE_ENV=production vue-cli-service build --mode pre --fix",
+    "build:sandbox": "cross-env BABEL_ENV=production NODE_ENV=production vue-cli-service build --mode sandbox --fix",
+    "build:slb": "cross-env BABEL_ENV=production NODE_ENV=production vue-cli-service build --mode slb --fix",
+    "build:pro": "cross-env BABEL_ENV=production NODE_ENV=production vue-cli-service build --mode pro --fix",
+    "build": "vue-cli-service build",
+    "release": "vue-cli-service build --mode release",
+    "dll": "webpack -p --progress --config ./build/webpack.conf.js",
+    "lint": "vue-cli-service lint",
+    "fix": "vue-cli-service lint --fix",
+    "remove:node_modules": "rm -rf node_modules",
+    "remove:map": "rm -fr ./dist/js/*.map"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "core-js": "^3.6.5",
+    "dom-to-image": "^2.6.0",
+    "echarts": "^5.2.2",
+    "element-ui": "2.15.6",
+    "fx-virtual-table": "^1.0.2",
+    "html2canvas": "^1.4.1",
+    "jsbarcode": "^3.11.5",
+    "resize-observer-polyfill": "^1.5.1",
+    "vant": "^2.12.47",
+    "vue": "^2.6.11",
+    "vue-i18n": "^8.26.7",
+    "vue-router": "^3.2.0",
+    "vuedraggable": "^2.24.3",
+    "vuex": "^3.4.0",
+    "wind-print-editer": "^1.0.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^16.0.1",
+    "@commitlint/config-conventional": "^16.0.0",
+    "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0",
+    "@vue/babel-preset-jsx": "^1.1.2",
+    "@vue/cli-plugin-babel": "~4.4.0",
+    "@vue/cli-plugin-eslint": "~4.4.0",
+    "@vue/cli-plugin-router": "~4.4.0",
+    "@vue/cli-plugin-vuex": "~4.4.0",
+    "@vue/cli-service": "~4.4.0",
+    "@vue/eslint-config-standard": "^5.1.2",
+    "autoprefixer": "^9.8.5",
+    "babel-eslint": "^10.1.0",
+    "babel-plugin-dynamic-import-node": "^2.3.3",
+    "cross-env": "^7.0.2",
+    "cz-customizable": "^6.3.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "eslint-plugin-vue": "^6.2.2",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.1.4",
+    "postcss": "^7.0.32",
+    "postcss-loader": "^3.0.0",
+    "qrcodejs2": "0.0.2",
+    "stylus": "^0.54.7",
+    "stylus-loader": "^3.0.2",
+    "vue-template-compiler": "^2.6.11",
+    "webpack-cli": "^4.9.2",
+    "wind-print-editer": "^1.0.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-customizable"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,vue}": [
+      "eslint --fix",
+      "git add"
+    ]
+  }
+}

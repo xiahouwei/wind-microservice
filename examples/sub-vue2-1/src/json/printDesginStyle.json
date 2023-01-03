@@ -1,0 +1,53 @@
+{
+  "result": 0,
+  "data": {
+      "id":"0",
+      "styleName":"小票模板",
+      "ticksTemplateList":[
+          {
+              "id":"3740555922827",
+              "high":10,
+              "wide":40,
+              "isDetailContainer":"0",
+              "hasGroupHead":"0",
+              "hasGroupFoot":"0",
+              "dtlTable":"01",
+              "groupField":[
+  
+              ],
+              "groupHeadField":[
+  
+              ],
+              "groupFootField":[
+  
+              ],
+              "componentsList":[{
+                "code":"01",
+                "field":"createShopName",
+                "dataType":"0",
+                "name":"店铺名称",
+                "id":"3741873641659",
+                "displayFormat":"%s",
+                "componentType":"data",
+                "width":40,
+                "height":"255",
+                "fontHeight":"1",
+                "fontWidth":"1",
+                "align":"1",
+                "fontBold":"1",
+                "fontULine":"0",
+                "fatherName":"基础信息",
+                "table":"01",
+                "tagId":101,
+                "positionX":0,
+                "positionY":0,
+                "fatherId":"3740555922827",
+                "row":1,
+                "col":1
+            }],
+              "templateContainerName":"基本信息",
+              "templateContainerType":"basic"
+          }
+      ]
+  }
+}
