@@ -1,3 +1,6 @@
+import { createStore, mapStates } from './store'
 export default {
-	a: 1
+	createStore,
+	mapStates
 }
+export { createStore, mapStates }

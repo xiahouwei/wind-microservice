@@ -9,28 +9,21 @@
 	</div>
 </template>
 <script>
-import { createStore, mapStates as printStates } from './store/helper'
+import { mapStates } from '@wind-microservice/wind-micro-core'
 export default {
 	name: 'login',
 	data () {
-		this.store = createStore(this, {
-			aaa: 0
-		})
 		return {
 		}
 	},
 	computed: {
-		...printStates({
+		...mapStates({
 			aaa: 'aaa'
 		})
 	},
-	created () {
-		window.$$printstore = this.store
-	},
 	methods: {
 		onIframeClick () {
-			console.dir(this.$refs.iframe)
-			this.store.commit('setA')
+			this.$printstore.commit('setA')
 		}
 	}
 }
