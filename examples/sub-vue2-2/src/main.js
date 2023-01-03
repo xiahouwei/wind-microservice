@@ -28,5 +28,4 @@ class Store {
 Vue.prototype.$printstore = new Store()
 
 app.vue = appMount(Vue, router, store, App)
-app.vue.$fxLogger.init(app.vue.$store.state.loginer.username)
 export default app
