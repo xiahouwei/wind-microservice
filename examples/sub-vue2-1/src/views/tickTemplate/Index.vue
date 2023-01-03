@@ -16,7 +16,7 @@ export default {
 	},
 	methods: {
 		onTestClick () {
-			this.$printstore.setData()
+			window.$$windMicroStore.commit('setA')
 		}
 	}
 }

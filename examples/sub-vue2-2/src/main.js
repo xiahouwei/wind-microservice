@@ -10,7 +10,7 @@ class Store {
 	constructor () {
 		this.vm = new Vue({
 			data: {
-				state: window.parent.$$windMicroStore.states
+				state: window.parent.$$windMicroStore.state
 			}
 		})
 	}

@@ -9,7 +9,7 @@
 	</div>
 </template>
 <script>
-import { mapStates } from '@wind-microservice/wind-micro-core'
+import { mapState } from '@wind-microservice/wind-micro-core'
 export default {
 	name: 'login',
 	data () {
@@ -17,13 +17,14 @@ export default {
 		}
 	},
 	computed: {
-		...mapStates({
+		...mapState({
 			aaa: 'aaa'
 		})
 	},
 	methods: {
 		onIframeClick () {
-			this.$printstore.commit('setA')
+			// this.$printstore.commit('setA')
+			window.$$windMicroStore.commit('setA')
 		}
 	}
 }

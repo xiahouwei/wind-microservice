@@ -4,10 +4,16 @@ import router from './router'
 import appInit, { appMount } from '@/js/appInit'
 import { createStore } from '@wind-microservice/wind-micro-core'
 const printstore = createStore({
-	aaa: 0
+	state: {
+		aaa: 1
+	},
+	mutations: {
+		setA (states) {
+			states.aaa++
+		}
+	}
 })
 Vue.prototype.$printstore = printstore
-// window.$$printstore = printstore
 appInit(Vue)
 const app = {}
 Vue.config.productionTip = false
