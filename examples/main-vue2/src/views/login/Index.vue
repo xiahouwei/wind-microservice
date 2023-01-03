@@ -50,19 +50,6 @@ export default {
 	&__right {
 		text-align: left
 	}
-	&__welcome-img {
-		display:inline-block;
-		background-image: url('~images/img/login-welcome.png')
-		background-repeat: no-repeat
-		background-position: center
-		background-size: contain
-		width: 632px
-		height: 408px
-		margin-right:30px
-	}
-	&__login-form {
-		margin-left:200px
-	}
 }
 </style>
 
