@@ -4,17 +4,8 @@
 	</div>
 </template>
 <script>
-import { mapState } from 'vuex'
 export default {
-	name: 'app',
-	computed: {
-		...mapState({
-			appTheme: state => state.stylusDynamic.appTheme
-		})
-	},
-	mounted () {
-		this.$fxStylusDynamic.setStyle('appTheme', this.appTheme)
-	}
+	name: 'app'
 }
 </script>
 <style lang="stylus" scoped>

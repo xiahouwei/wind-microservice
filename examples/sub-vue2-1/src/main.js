@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-import store from './store'
 import appInit, { appMount } from '@/js/appInit'
 appInit(Vue)
 
@@ -27,5 +26,5 @@ class Store {
 Vue.prototype.$printstore = new Store()
 const app = {}
 Vue.config.productionTip = false
-app.vue = appMount(Vue, router, store, App)
+app.vue = appMount(Vue, router, App)
 export default app

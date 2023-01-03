@@ -1,10 +1,10 @@
 <template>
-	<w-app-container class="print-view" direction="row">
+	<div class="print-view">
 		<div>ssssss{{$printstore.state.aaa}}</div>
 		<el-button
 			@click='onTestClick'
 		>测试</el-button>
-	</w-app-container>
+	</div>
 </template>
 <script>
 export default {

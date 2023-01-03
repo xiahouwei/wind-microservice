@@ -1,11 +1,11 @@
 
 <template>
-	<w-app-container class="tick-design">
+	<div class="tick-design">
 		<div>ssssss{{$printstore.state.aaa}}</div>
 		<el-button
 			@click='onTestClick'
 		>测试</el-button>
-	</w-app-container>
+	</div>
 </template>
 <script>
 export default {
