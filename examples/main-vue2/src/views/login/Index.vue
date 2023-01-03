@@ -23,8 +23,7 @@ export default {
 	},
 	methods: {
 		onIframeClick () {
-			// this.$printstore.commit('setA')
-			window.$$windMicroStore.commit('setA')
+			this.$printstore.commit('setA')
 		}
 	}
 }

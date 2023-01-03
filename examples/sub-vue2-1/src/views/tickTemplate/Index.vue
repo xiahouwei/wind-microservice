@@ -2,21 +2,28 @@
 <template>
 	<div class="tick-design">
 		<div>ssssss{{$printstore.state.aaa}}</div>
+		<div>ssssss{{aaa}}</div>
 		<el-button
 			@click='onTestClick'
 		>测试</el-button>
 	</div>
 </template>
 <script>
+import { mapState } from '@wind-microservice/wind-micro-core'
 export default {
 	name: 'createContainer',
 	data () {
 		return {
 		}
 	},
+	computed: {
+		...mapState({
+			aaa: 'aaa'
+		})
+	},
 	methods: {
 		onTestClick () {
-			window.$$windMicroStore.commit('setA')
+			this.$printstore.commit('setA')
 		}
 	}
 }
