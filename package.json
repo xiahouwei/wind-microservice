@@ -5,6 +5,9 @@
     "packages/*",
     "examples/*"
   ],
+  "scripts": {
+		"serve": "yarn workspace @wind-microservice/main-vue2 run serve & yarn workspace @wind-microservice/sub-vue2-1 run serve & yarn workspace @wind-microservice/sub-vue2-2 run serve"
+  },
   "devDependencies": {
     "lerna": "^6.3.0"
   }

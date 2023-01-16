@@ -156,17 +156,17 @@ const vueConfig = {
 	},
 	devServer: {
 		// host: PROXY_HOST_MAP[PROXY_HOST],
-		port: 8866,
+		port: 6655,
 		https: false,
 		hotOnly: true,
 		proxy: {
 			'/toolsprint': {
-				target: 'http://localhost:8877',
+				target: 'http://localhost:6677',
 				changeOrigin: true,
 				pathRewrite: { '^/toolsprint': '' }
 			},
 			'/testprint': {
-				target: 'http://localhost:8855',
+				target: 'http://localhost:6666',
 				changeOrigin: true,
 				pathRewrite: { '^/testprint': '' }
 			},

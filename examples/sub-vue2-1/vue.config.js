@@ -36,7 +36,7 @@ const vueConfig = {
 			.set('$json', resolve('src/json'))
 	},
 	devServer: {
-		port: 8877,
+		port: 6677,
 		https: false,
 		hotOnly: true,
 		proxy: {
